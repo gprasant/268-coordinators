@@ -10,7 +10,7 @@ import UIKit
 import CloudKit
 
 class RestaurantViewController : UITableViewController {
-    
+
     enum Sections : Int {
         case info
         case reviews
@@ -31,6 +31,14 @@ class RestaurantViewController : UITableViewController {
         configureUI()
         loadReviews()
     }
+
+    class func makeFromStoryboard() -> RestaurantViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let identifier = String(describing: self)
+        let vc = storyboard.instantiateViewController(withIdentifier: identifier) as! RestaurantViewController
+        return vc
+    }
+
     
     private func loadReviews() {
         Restaurants.reviews(for: restaurant!) { (reviews, error) in

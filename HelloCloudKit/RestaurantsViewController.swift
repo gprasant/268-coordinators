@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol RestaurantsViewControllerDelegate : class {
+    func didSelect(restaurant: Restaurant)
+}
+
 class RestaurantsViewController : UITableViewController {
     
     var restaurants: [Restaurant] = []
+
+    weak var delegate: RestaurantsViewControllerDelegate?
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,5 +66,10 @@ class RestaurantsViewController : UITableViewController {
         cell.textLabel?.text = restaurant.name
         cell.detailTextLabel?.text = restaurant.address
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let restaurant = restaurants[indexPath.row]
+        delegate?.didSelect(restaurant: restaurant)
     }
 }
