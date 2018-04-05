@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12A36B65205DE19900444436 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A36B64205DE19900444436 /* AppCoordinator.swift */; };
 		7C045973B0CA707E5E4706F0 /* Pods_HelloCloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383201322E7C8EF5925BFC0A /* Pods_HelloCloudKit.framework */; };
 		B508C6741E3F833300C83C6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508C6731E3F833300C83C6A /* AppDelegate.swift */; };
 		B508C6791E3F833300C83C6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B508C6771E3F833300C83C6A /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12A36B64205DE19900444436 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		383201322E7C8EF5925BFC0A /* Pods_HelloCloudKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloCloudKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D05E8BF85629B348B815C4 /* Pods-HelloCloudKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloCloudKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloCloudKit/Pods-HelloCloudKit.release.xcconfig"; sourceTree = "<group>"; };
 		5B0657AC5DDAD53E6A8770FB /* Pods-HelloCloudKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloCloudKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloCloudKit/Pods-HelloCloudKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				B508C67A1E3F833300C83C6A /* Assets.xcassets */,
 				B508C67C1E3F833300C83C6A /* LaunchScreen.storyboard */,
 				B508C67F1E3F833300C83C6A /* Info.plist */,
+				12A36B64205DE19900444436 /* AppCoordinator.swift */,
 			);
 			path = HelloCloudKit;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				B5877ACC1E8AE69200B4A7E2 /* RestaurantViewController.swift in Sources */,
 				B582983E1E771E3100B91EAB /* RestaurantsViewController.swift in Sources */,
 				B5877AD11E8C19DC00B4A7E2 /* AddressCell.swift in Sources */,
+				12A36B65205DE19900444436 /* AppCoordinator.swift in Sources */,
 				B508C6741E3F833300C83C6A /* AppDelegate.swift in Sources */,
 				B5AA132E1E955EE700948BBC /* ImageHelper.swift in Sources */,
 			);

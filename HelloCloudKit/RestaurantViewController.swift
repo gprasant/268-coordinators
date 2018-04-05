@@ -9,7 +9,13 @@
 import UIKit
 import CloudKit
 
+protocol RestaurantViewControllerDelegate : class {
+    func addReviewTapped(_ vc: RestaurantViewController)
+}
+
 class RestaurantViewController : UITableViewController {
+
+    weak var restaurantDelegate: RestaurantViewControllerDelegate?
 
     enum Sections : Int {
         case info
@@ -19,9 +25,17 @@ class RestaurantViewController : UITableViewController {
     
     var restaurant: Restaurant?
     var reviews: [Review] = []
+
+    var restaurantID: CKRecordID {
+        return restaurant!.recordID!
+    }
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBAction func addReview(_ sender: Any) {
+        restaurantDelegate?.addReviewTapped(self)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,7 +96,7 @@ class RestaurantViewController : UITableViewController {
         }
     }
     
-    private func insertReview(_ review: Review) {
+    func insertReview(_ review: Review) {
         reviews.insert(review, at: 0)
         let indexPath = IndexPath(row: 0, section: Sections.reviews.rawValue)
         tableView.insertRows(at: [indexPath], with: .top)

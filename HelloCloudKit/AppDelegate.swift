@@ -10,25 +10,6 @@ import UIKit
 import CoreLocation
 import CloudKit
 
-class AppCoordinator : RestaurantsViewControllerDelegate {
-    let navigationController: UINavigationController
-
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-
-    func start() {
-        let restaurantsVC = navigationController.topViewController as! RestaurantsViewController
-        restaurantsVC.delegate = self
-    }
-
-    func didSelect(restaurant: Restaurant) {
-        let restaurantDetail = RestaurantViewController.makeFromStoryboard()
-        restaurantDetail.restaurant = restaurant
-        navigationController.pushViewController(restaurantDetail, animated: true)
-    }
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?

@@ -210,10 +210,11 @@
                     <navigationItem key="navigationItem" title="Restaurant Title" id="AZ3-XJ-DUh">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="c5K-zp-XYC">
                             <connections>
-                                <segue destination="bu2-Wf-eGQ" kind="presentation" identifier="addReviewSegue" id="XMZ-iK-pCm"/>
+                                <action selector="addReview:" destination="s8R-Hw-dR9" id="RYU-KW-RIH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="Rlz-9c-ZNY" id="1Nz-RI-Rxd"/>
                     </connections>
@@ -333,7 +334,7 @@
         <!--Navigation Controller-->
         <scene sceneID="fXr-Ud-foI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bu2-Wf-eGQ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AddReviewNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="bu2-Wf-eGQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="T1F-9N-5r2">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
