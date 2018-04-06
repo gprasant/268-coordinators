@@ -46,4 +46,10 @@ class AppCoordinator : RestaurantsViewControllerDelegate, RestaurantViewControll
 
         navigationController.present(nav, animated: true)
     }
+
+    func photosTapped(_ vc: RestaurantViewController) {
+        let photosVC = PhotosViewController.makeFromStoryBoard()
+        photosVC.restaurantID = vc.restaurantID
+        navigationController.pushViewController(photosVC, animated: true)
+    }
 }

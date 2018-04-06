@@ -126,9 +126,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="6cB-RY-uxw" kind="show" identifier="photosSegue" id="o2t-Ld-9ZV"/>
-                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="106" id="DrP-vg-2DE" customClass="ReviewCell" customModule="HelloCloudKit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="372" width="375" height="106"/>
@@ -353,7 +350,7 @@
         <!--Photos-->
         <scene sceneID="XVY-hk-5ln">
             <objects>
-                <collectionViewController id="6cB-RY-uxw" customClass="PhotosViewController" customModule="HelloCloudKit" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="PhotosViewController" id="6cB-RY-uxw" customClass="PhotosViewController" customModule="HelloCloudKit" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Jjt-0E-1pf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -400,6 +397,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akU-78-jhp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

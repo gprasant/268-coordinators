@@ -11,6 +11,7 @@ import CloudKit
 
 protocol RestaurantViewControllerDelegate : class {
     func addReviewTapped(_ vc: RestaurantViewController)
+    func photosTapped(_ vc: RestaurantViewController)
 }
 
 class RestaurantViewController : UITableViewController {
@@ -74,28 +75,6 @@ class RestaurantViewController : UITableViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let restaurantID = restaurant?.recordID else { return }
-        
-        if segue.identifier == "addReviewSegue" {
-            let destinationNav = segue.destination as! UINavigationController
-            let destination = destinationNav.viewControllers.first as! ReviewViewController
-            destination.addReviewBlock = { [weak self] vc in
-                let review = Review(author: vc.nameTextField.text ?? "",
-                                    comment: vc.commentTextView.text,
-                                    rating: Float(vc.ratingView.value),
-                                    restaurantID: restaurantID)
-                Restaurants.add(review: review)
-                self?.dismiss(animated: true, completion: {
-                    self?.insertReview(review)
-                })
-            }
-        } else if segue.identifier == "photosSegue" {
-            let destination = segue.destination as! PhotosViewController
-            destination.restaurantID = restaurant!.recordID!
-        }
-    }
-    
     func insertReview(_ review: Review) {
         reviews.insert(review, at: 0)
         let indexPath = IndexPath(row: 0, section: Sections.reviews.rawValue)
@@ -135,6 +114,12 @@ class RestaurantViewController : UITableViewController {
             cell.authorLabel.text = review.authorName
             cell.ratingView.value = CGFloat(review.stars)
             return cell
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == Sections.info.rawValue && indexPath.row == 1 {
+            restaurantDelegate?.photosTapped(self)
         }
     }
 }
